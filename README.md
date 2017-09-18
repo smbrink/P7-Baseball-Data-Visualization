@@ -2,7 +2,7 @@
 
 Summary in no more than 4 sentences, briefly introduce your data visualization and add any context that can help readers understand it.
 
-I choose the baseball data set to use in my visualization because I am very interested in baseball and stats. I am going to analyize the data to show the difference in how a low/high average may translate into more or less homeruns as well as show the difference in homeruns and average compared to the height of a player.
+I choose the baseball data set to use in my visualization because I am very interested in baseball as a game as well as the  stats behind it. I am going to analyize the data to show the difference in how a low/high average may translate into more or less homeruns as well as show the difference in homeruns and average compared to the height of a player.
 
 
 
