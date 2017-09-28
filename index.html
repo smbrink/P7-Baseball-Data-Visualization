@@ -1,1 +1,247 @@
-Index.html 
+ <!DOCTYPE html>
+<html>
+  <head>  
+    <meta charset="utf-8">
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
+    <style>
+        
+        .axis {
+          font-family: arial;
+          font-size: .2em;
+        }
+
+        path {
+          fill: none;
+          stroke: red;
+          stroke-width: 2px;
+        }
+
+        .tick {
+          fill: none;
+          stroke: black;
+        }
+        
+        circle {
+          opacity: 0.8;
+          stroke: none;
+        }
+
+        .line_plot {
+          fill: none;
+          stroke: #4eb0bb;
+          stroke-width: 2px;
+        }
+
+        #chartcontainer {
+          margin: auto;
+          width: auto;
+          height: auto;
+          display: block;
+
+        }
+
+        #myButtons {
+          position: fixed;
+          bottom: 0px;
+          left: 19%;
+        }
+
+        #button1, #button2, #button3, #button4 {
+          padding: 1px;
+          margin: 10px;
+          background: white;
+          color: blue;
+          height: 20px;
+          width: 140px;
+        } 
+
+      
+
+    </style>
+  </head>
+  <body>
+
+  <div id = 'myButtons' style = "text-align: center;">
+    <button id = 'button1'>
+         Height/Avg
+    </button>
+    <button id = 'button2'>
+         Weight/Avg
+    </button>
+    <button id = 'button3'>
+         Height/HR
+    </button>
+    <button id = 'button4'>
+         Weight/HR
+    </button>
+  </div>
+    <div id = "chartcontainer"> </div>
+
+    <script type="text/javascript">
+      function draw(data) {
+
+          "use strict";
+
+          /*
+          Dimple.js Chart construction code
+          */
+          
+          var svg = dimple.newSvg("#chartcontainer", 1000, 700);
+          var chart1 = new dimple.chart(svg, data);
+          var x = chart1.addCategoryAxis("x", "height");
+          x.title = "Player Height in Inches";
+          var y = chart1.addMeasureAxis("y", "avg");
+          y.tickFormat = ',.03f';
+          y.title = "Player Avg Batting Average";
+          x.fontSize = "auto";
+          y.fontSize = "auto";
+
+          chart1.addSeries("Player Avg  Batting Average", dimple.plot.line)
+                .aggregate = dimple.aggregateMethod.avg;
+          chart1.addSeries("Player Avg  Batting Average", dimple.plot.scatter)
+                .aggregate = dimple.aggregateMethod.avg;
+          chart1.assignColor("Player Avg  Batting Average", "blue");
+          chart1.draw();
+
+          svg.append("text")
+             .attr("x", (svg[0][0].clientWidth / 2))
+             .attr("y", 14).attr("text-anchor", "middle")
+             .style("font-family", "sans-serif")
+             .style("font-size", "16px")
+             .style("font-weight", "bold")
+             .style("color", "#black")
+             .text("Players are Pretty Equal in Batting Avg Till Around 76 Inches");
+
+
+          d3.select("#button1").on("click", function() {
+              d3.select("svg").remove();
+
+              var svg = dimple.newSvg("#chartcontainer", 1000, 700);
+              var chart1 = new dimple.chart(svg, data);
+              var x = chart1.addCategoryAxis("x", "height");
+              x.title = "Player Height in Inches";
+              var y = chart1.addMeasureAxis("y", "avg");
+              y.tickFormat = ',.03f';
+              y.title = "Player Avg Batting Average";
+              x.fontSize = "auto";
+              y.fontSize = "auto";
+
+              chart1.addSeries("Player Avg  Batting Average", dimple.plot.line)
+                    .aggregate = dimple.aggregateMethod.avg;
+              chart1.addSeries("Player Avg  Batting Average", dimple.plot.scatter)
+                    .aggregate = dimple.aggregateMethod.avg;
+              chart1.assignColor("Player Avg  Batting Average", "blue");
+              chart1.draw();
+
+              svg.append("text")
+                 .attr("x", (svg[0][0].clientWidth / 2))
+                 .attr("y", 14).attr("text-anchor", "middle")
+                 .style("font-family", "sans-serif")
+                 .style("font-size", "16px")
+                 .style("font-weight", "bold")
+                 .style("color", "#black")
+                 .text("Players are Pretty Equal in Batting Avg Till Around 76 Inches");
+          });
+
+          d3.select("#button2").on("click", function() {
+              d3.select("svg").remove();
+
+              var svg = dimple.newSvg("#chartcontainer", 1000, 700);
+              var chart2 = new dimple.chart(svg, data);
+              var x = chart2.addCategoryAxis("x", "weight");
+              x.title = "Player Weight in LBs";
+              var y = chart2.addMeasureAxis("y", "avg");
+              y.tickFormat = ',.03f';
+              y.title = "Player Avg Batting Average";
+              x.fontSize = "auto";
+              y.fontSize = "auto";
+
+              chart2.addSeries("Player Avg Batting Average", dimple.plot.line)
+                    .aggregate = dimple.aggregateMethod.avg;
+              chart2.addSeries("Player Avg Batting Average", dimple.plot.scatter)
+                    .aggregate = dimple.aggregateMethod.avg;
+              chart2.assignColor("Player Avg Batting Average", "blue");
+              chart2.draw();
+
+              svg.append("text")
+             .attr("x", (svg[0][0].clientWidth / 2))
+             .attr("y", 14).attr("text-anchor", "middle")
+             .style("font-family", "sans-serif")
+             .style("font-size", "16px")
+             .style("font-weight", "bold")
+             .style("color", "#black")
+             .text("Players are Pretty Equal in Batting Avg when Compared with Weight");
+          });
+   
+          d3.select("#button3").on("click", function() {
+              d3.select("svg").remove();
+              
+              var svg = dimple.newSvg("#chartcontainer", 1000, 700);
+              var chart3 = new dimple.chart(svg, data);
+              var x = chart3.addCategoryAxis("x", "height");
+              x.title = "Player Height in Inches";
+              var y = chart3.addMeasureAxis("y", "HR");
+              y.title = "Player Average Home Runs";
+              x.fontSize = "auto";
+              y.fontSize = "auto";
+
+              chart3.addSeries("Player Average Home Runs", dimple.plot.line)
+                    .aggregate = dimple.aggregateMethod.avg;
+              chart3.addSeries("Player Average Home Runs", dimple.plot.scatter)
+                    .aggregate = dimple.aggregateMethod.avg;
+              chart3.assignColor("Player Average Home Runs", "blue");
+              chart3.draw();
+
+              svg.append("text")
+             .attr("x", (svg[0][0].clientWidth / 2))
+             .attr("y", 14).attr("text-anchor", "middle")
+             .style("font-family", "sans-serif")
+             .style("font-size", "16px")
+             .style("font-weight", "bold")
+             .style("color", "#black")
+             .text("Taller Players Clearly Hit More Home Runs on Average");
+          });
+          
+          d3.select("#button4").on("click", function() {
+              d3.select("svg").remove();
+
+              var svg = dimple.newSvg("#chartcontainer", 1000, 700);
+              var chart4 = new dimple.chart(svg, data);
+              var x = chart4.addCategoryAxis("x", "weight");
+              x.title = "Player weight in LBs";
+              var y = chart4.addMeasureAxis("y", "HR");
+              y.title = "Player Average Home Runs";
+              x.fontSize = "auto";
+              y.fontSize = "auto";
+
+              chart4.addSeries("Player Average Home Runs", dimple.plot.line)
+                    .aggregate = dimple.aggregateMethod.avg;
+              chart4.addSeries("Player Average Home Runs", dimple.plot.scatter)
+                    .aggregate = dimple.aggregateMethod.avg;
+              chart4.assignColor("Player Average Home Runs", "blue");
+              chart4.draw();
+
+              svg.append("text")
+             .attr("x", (svg[0][0].clientWidth / 2))
+             .attr("y", 14).attr("text-anchor", "middle")
+             .style("font-family", "sans-serif")
+             .style("font-size", "16px")
+             .style("font-weight", "bold")
+             .style("color", "#black")
+             .text("Heavier Players Tend to Hit More Home Runs on Average Also");
+          
+          });
+          
+      };
+
+    </script>
+  </body>
+  </head>
+
+  <body>
+    <script type="text/javascript">
+    d3.csv("baseball_data_deleted0.csv", draw);
+    </script>
+  </body>
+</html>
