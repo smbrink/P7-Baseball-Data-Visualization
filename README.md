@@ -1,8 +1,6 @@
 # P7-Baseball-Data-Visualization
 
-Summary in no more than 4 sentences, briefly introduce your data visualization and add any context that can help readers understand it.
-
-I choose the baseball data set to use in my visualization because I am very interested in baseball as a game as well as the  stats behind it. I am going to analyze the data to show the difference in how a low/high average may translate into more or less homeruns as well as show the difference in homeruns and average compared to the height of a player.
+I choose the baseball data set to use in my visualization because I am very interested in baseball as a game as well as the  stats behind it. I am going to analyze the data to show the difference in homeruns and batting average compared to the height and weight of a baseball player. The data clearly shows a noticable difference in the average amount of homeruns with the height and weight of the baseball players. The batting average of the players are pretty comparable with the height and weight of the players.
 
 
 
@@ -14,7 +12,9 @@ Feedback include all feedback you received from others on your visualization fro
 
 
 
-Resources list any sources you consulted to create your visualization
+Resources list any sources you consulted to create your visualization.
+
+I used an assortment of resources including the Udacity Forum, Stackoverflow, Wikipedia, D3 API, dimple, and Google.
 
 
 
