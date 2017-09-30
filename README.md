@@ -10,8 +10,18 @@ Design,
 I choose to show scatter/line plots to visualize the correlation in batting average and home run totals due to the height and weight of the given baseball players. I decided to use buttons to switch between the plots so the audience could control what plot they were seeing.
 
 
-Feedback include all feedback you received from others on your visualization from the first sketch to the final visualization
+Feedback 
 
+1. My Wife-It was suggested that I correct some language and spelling in my final project as well as make the chart container a little smaller to keep the buttons from over lapping the x axis title in my bl.ocks.org example.
+
+2. Forum member Georgeliu gave me some very positive feedback including...
+Perfect chert type with a clear explaination.
+No clutter and the right color as not to distract but enough to make it distinct.
+Individual titles do a good job of explaining the insights of the charts.
+
+3. Another unnamed forum member gave me a some more feedback including...
+Add player weight into intervals using bins as to make the x axis less cluttered. Done and it helped out alot.
+Add general homerun average line to help with the comparison between each datapoint. I didn't feel it was needed because the comparsion I was trying to draw was between the different heights and weights and not necessarily the players as a whole.
 
 Resources list any sources you consulted to create your visualization.
 
