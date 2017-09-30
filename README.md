@@ -9,6 +9,8 @@ The data clearly shows a noticable correlation in the average amount of homeruns
 Design,
 I choose to show scatter/line plots to visualize the correlation in batting average and home run totals due to the height and weight of the given baseball players. I decided to use buttons to switch between the plots so the audience could control what plot they were seeing.
 
+I created a data set with weight_bin to put all the different weights in to help declutter the weight x axis. It really helped smooth out the chart and also made it look alot cleaner.
+
 
 Feedback 
 
